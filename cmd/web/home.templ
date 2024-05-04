@@ -1,0 +1,9 @@
+package web
+
+import "github.com/lifeofdan/quickstart/cmd/web/layouts"
+
+templ Home() {
+	@layouts.Default() {
+		<h1>Hello world!</h1>
+	}
+}

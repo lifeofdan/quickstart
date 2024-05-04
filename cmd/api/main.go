@@ -3,13 +3,13 @@ package main
 import (
 	"fmt"
 	"net/http"
+
+	"github.com/a-h/templ"
+	"github.com/lifeofdan/quickstart/cmd/web"
 )
 
 func main() {
-	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		w.Header().Set("content-type", "text/html")
-		fmt.Fprintln(w, "Hello world!")
-	})
+	http.Handle("/", templ.Handler(web.Home()))
 
 	err := http.ListenAndServe(":8080", nil)
 
