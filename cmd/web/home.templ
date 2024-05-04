@@ -4,6 +4,14 @@ import "github.com/lifeofdan/quickstart/cmd/web/layouts"
 
 templ Home() {
 	@layouts.Default() {
-		<h1>Hello world!</h1>
+		<h1 id="parent-div">Hello from frontend</h1>
+		<button
+			hx-post="/clicked"
+			hx-trigger="click"
+			hx-target="#parent-div"
+			hx-swap="outerHTML"
+		>
+			Click Me!
+		</button>
 	}
 }
