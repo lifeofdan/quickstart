@@ -7,8 +7,13 @@ import (
 
 func main() {
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		fmt.Printf("Hello world")
+		w.Header().Set("content-type", "text/html")
+		fmt.Fprintln(w, "Hello world!")
 	})
 
-	http.ListenAndServe("8080", nil)
+	err := http.ListenAndServe(":8080", nil)
+
+	if err != nil {
+		panic(fmt.Sprintf("cannot start http server: %s", err))
+	}
 }
