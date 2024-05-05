@@ -1,5 +1,12 @@
 # A very simple go starter template
 
+## Prerequisites
+
+### Install and add to `$PATH`
+
+- [Air](https://github.com/cosmtrek/air)
+- [Templ](https://github.com/a-h/templ)
+
 ## Makefile commands
 
 Run dev server with hot reload
@@ -8,12 +15,8 @@ Run dev server with hot reload
 make dev
 ```
 
-(Note: You must have [air](https://github.com/cosmtrek/air) installed)
-
 Build application
 
 ```sh
 make build
 ```
-
-(Note: This generates your templ files and you will need to have [templ](https://github.com/a-h/templ) installed and a part of your path)
