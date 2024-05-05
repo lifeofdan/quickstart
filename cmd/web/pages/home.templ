@@ -1,11 +1,14 @@
-package web
+package pages
 
 import "github.com/lifeofdan/quickstart/cmd/web/layouts"
 
+// bg-blue-900
 templ Home() {
 	@layouts.Default() {
-		<h1 id="parent-div">Hello from frontend</h1>
+		<h1 id="parent-div" class="text-xl">Hello from frontend</h1>
 		<button
+			id="home-btn"
+			class="button"
 			hx-post="/clicked"
 			hx-trigger="click"
 			hx-target="#parent-div"
@@ -13,5 +16,6 @@ templ Home() {
 		>
 			Click Me!
 		</button>
+		<script src="/assets/js/pages/home.js"></script>
 	}
 }
