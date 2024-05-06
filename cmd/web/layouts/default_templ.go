@@ -10,6 +10,8 @@ import "context"
 import "io"
 import "bytes"
 
+import "github.com/lifeofdan/quickstart/cmd/web/components"
+
 func Default() templ.Component {
 	return templ.ComponentFunc(func(ctx context.Context, templ_7745c5c3_W io.Writer) (templ_7745c5c3_Err error) {
 		templ_7745c5c3_Buffer, templ_7745c5c3_IsBuffer := templ_7745c5c3_W.(*bytes.Buffer)
@@ -23,7 +25,11 @@ func Default() templ.Component {
 			templ_7745c5c3_Var1 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<!doctype html><html lang=\"en\"><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"><meta name=\"description\" content=\"A starter template\"><title>quickstart</title><script defer src=\"/assets/js/htmx.min.js\"></script><link rel=\"stylesheet\" href=\"assets/css/styles.css\"></head><body><main class=\"container mx-auto\">")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<!doctype html><html lang=\"en\"><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"><meta name=\"description\" content=\"A starter template\"><title>quickstart</title><script defer src=\"/assets/js/htmx.min.js\"></script><link rel=\"stylesheet\" href=\"assets/css/styles.css\"></head><body><main>")
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		templ_7745c5c3_Err = components.Navbar().Render(ctx, templ_7745c5c3_Buffer)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -31,7 +37,7 @@ func Default() templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</main></body></html>")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</main></body><link rel=\"stylesheet\" href=\"assets/css/icons.min.css\"></html>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

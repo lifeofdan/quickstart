@@ -4,17 +4,19 @@ import "github.com/lifeofdan/quickstart/cmd/web/layouts"
 
 templ Home() {
 	@layouts.Default() {
-		<h1 id="parent-div" class="is-size-1">Hello from frontend</h1>
-		<button
-			id="home-btn"
-			class="button"
-			hx-post="/clicked"
-			hx-trigger="click"
-			hx-target="#parent-div"
-			hx-swap="outerHTML"
-		>
-			Click Me!
-		</button>
+		<section class="container">
+			<h1 id="parent-div" class="is-size-1">Hello from frontend</h1>
+			<button
+				id="home-btn"
+				class="button"
+				hx-post="/clicked"
+				hx-trigger="click"
+				hx-target="#parent-div"
+				hx-swap="outerHTML"
+			>
+				Click Me!
+			</button>
+		</section>
 		<script src="/assets/js/pages/home.js"></script>
 	}
 }

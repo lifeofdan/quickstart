@@ -1,5 +1,7 @@
 package layouts
 
+import "github.com/lifeofdan/quickstart/cmd/web/components"
+
 templ Default() {
 	<!DOCTYPE html>
 	<html lang="en">
@@ -9,15 +11,14 @@ templ Default() {
 			<meta name="description" content="A starter template"/>
 			<title>quickstart</title>
 			<script defer src="/assets/js/htmx.min.js"></script>
-			<link
-				rel="stylesheet"
-				href="assets/css/styles.css"
-			/>
+			<link rel="stylesheet" href="assets/css/styles.css"/>
 		</head>
 		<body>
-			<main class="container mx-auto">
+			<main>
+				@components.Navbar()
 				{ children... }
 			</main>
 		</body>
+		<link rel="stylesheet" href="assets/css/icons.min.css"/>
 	</html>
 }
