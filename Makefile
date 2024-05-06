@@ -5,7 +5,7 @@ all: build
 build:
 	@echo "Build go app..."
 	@templ generate
-	@go build -o tmp/main cmd/api/main.go
+	@go build -o tmp/main cmd/main.go
 	
 # Live reload
 dev:
