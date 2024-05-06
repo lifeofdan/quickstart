@@ -18,11 +18,12 @@ func main() {
 		fmt.Fprint(w, "User-agent: *")
 	})
 
-	// Check htmx is working
+	// Check htmx is working boilerplate
 	http.HandleFunc("/clicked", func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("content-type", "text/html")
 		fmt.Fprintf(w, "<h1 id=\"parent-div\" class=\"is-size-1\">Hello from backend</h1>")
 	})
+	// End check htmx boilerplate
 
 	err := http.ListenAndServe(":8080", nil)
 
